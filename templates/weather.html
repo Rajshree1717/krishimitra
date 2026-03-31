@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather Advisory</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>🌱 KRISHI MITRA</h1>
+    <p>Smart Farming Advisory System</p>
+</header>
+
+<section>
+    <h2>🌦️ Weather Advisory</h2>
+
+    <!-- FORM -->
+    <form method="POST" action="/weather-advisory">
+        <label>Enter City Name</label>
+        <input type="text" name="city" placeholder="e.g. Jaipur" required>
+        <button type="submit">Check Weather</button>
+    </form>
+
+    <!-- ERROR -->
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <!-- WEATHER DATA -->
+    {% if weather %}
+        <div>
+            <h3>📍 Weather Details</h3>
+            <p>🌡 Temperature: {{ weather.temperature }} °C</p>
+            <p>💧 Humidity: {{ weather.humidity }} %</p>
+            <p>💨 Wind: {{ weather.wind }} m/s</p>
+            <p>☁ Condition: {{ weather.condition }}</p>
+        </div>
+    {% endif %}
+
+    <!-- RISKS -->
+    {% if risks %}
+        <div>
+            <h3>⚠️ Detected Risks</h3>
+            <ul>
+                {% for r in risks %}
+                    <li>{{ r }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- ADVISORY -->
+    {% if advisory %}
+        <div>
+            <h3>🌱 Farmer Advisory</h3>
+            <p>{{ advisory|safe }}</p>
+        </div>
+    {% endif %}
+
+    <br>
+    <a href="/home"><button>⬅ Back to Home</button></a>
+</section>
+
+<footer>
+    <p>© 2026 Krishi Mitra</p>
+</footer>
+</body>
+</html>

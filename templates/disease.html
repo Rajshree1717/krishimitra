@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Disease Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body {
+            background: #f5fff7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px 25px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        img {
+            border-radius: 8px;
+        }
+
+        footer {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 KRISHI MITRA</h1>
+    <p>Smart Farming Advisory System</p>
+</header>
+
+<section>
+
+<h2>🦠 Upload Leaf Image</h2>
+
+<form action="/disease-detection" method="POST" enctype="multipart/form-data">
+
+    <label>Select Leaf Image (JPG)</label>
+
+    <input type="file" name="file" accept=".jpg,.jpeg" onchange="previewImage(event)" required>
+
+    <p id="fileName"></p>
+
+    <img id="preview" width="200" style="display:none;">
+
+    <button type="submit">Detect Disease</button>
+
+</form>
+
+<br>
+
+<a href="/home">
+    <button>⬅ Back to Home</button>
+</a>
+
+</section>
+
+<footer>
+    <p>© 2026 Krishi Mitra</p>
+</footer>
+
+<script>
+function previewImage(event) {
+    const file = event.target.files[0];
+
+    if (file) {
+        document.getElementById("fileName").innerText = "Selected: " + file.name;
+        const preview = document.getElementById("preview");
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

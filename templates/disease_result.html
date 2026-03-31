@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Disease Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body {
+            background: #f5fff7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        img {
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        footer {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 KRISHI MITRA</h1>
+    <p>Smart Farming Advisory System</p>
+</header>
+
+<section>
+
+<h2>🦠 Disease Detection Result</h2>
+
+<div class="card">
+
+    <h3>Disease: {{ disease }}</h3>
+    <h3>Confidence: {{ confidence }}</h3>
+
+    <p><b>Remedy:</b> {{ remedy }}</p>
+
+    
+
+    <br><br>
+
+
+    <a href="/disease-detection">
+        <button>Try Another Image</button>
+    </a>
+
+    <a href="/home">
+        <button>Home</button>
+    </a>
+
+</div>
+
+</section>
+
+<footer>
+    <p>© 2026 Krishi Mitra</p>
+</footer>
+
+</body>
+</html>

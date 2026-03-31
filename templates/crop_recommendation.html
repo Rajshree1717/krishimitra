@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        .back-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-btn button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .back-btn button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌾 Crop Recommendation System</h1>
+</header>
+
+<section>
+
+<h2>Enter Soil Details</h2>
+
+<form id="form">
+
+    <label>Nitrogen</label>
+    <input type="number" id="N" required>
+
+    <label>Phosphorus</label>
+    <input type="number" id="P" required>
+
+    <label>Potassium</label>
+    <input type="number" id="K" required>
+
+    <label>Temperature (°C)</label>
+    <input type="number" id="temperature" step="0.1" required>
+
+    <label>Humidity</label>
+    <input type="number" id="humidity" required>
+
+    <label>pH</label>
+    <input type="number" id="ph" step="0.1" min="0" max="14" required>
+
+    <label>Rainfall</label>
+    <input type="number" id="rainfall" required>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+<h3 id="result"></h3>
+
+<!-- ✅ Back to Home Button -->
+<div class="back-btn">
+    <a href="/home">
+        <button type="button">⬅ Back to Home</button>
+    </a>
+</div>
+
+</section>
+
+<footer>
+    <p>AI Based Agriculture System</p>
+</footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
